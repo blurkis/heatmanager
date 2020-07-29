@@ -1,0 +1,8 @@
+* When it open the one-wire sensor for data, it should not close the application upon open-error or read-error, but instead in a loop try to re-open it after a small paus.
+For example:
+
+try open, 
+if fail -> paus 5 secs.
+Try open, -> paus 5 secs,
+	if fail (close heater,) and retry open for ever with 5 secs paus.
+x
