@@ -1,0 +1,4 @@
+2020-07-29:
+	* Initial release to github.
+	* When it failed to open the one-wire data it used to quit the program. Now it sleeps for some time and atleast tries one more time.
+
