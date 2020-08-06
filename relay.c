@@ -40,9 +40,10 @@ int error=0;
 char buf[200];
 char *temp;
 float value;
-float wanted_value=40;
+float wanted_value=36.0;
 int fd=-1;
 int intvalue;
+int file_open_loop=0;
 
 #define termostat 0   		/* On when the termostat should open up to the entire system */
 #define heater 4		/* Heater is on 4 */
@@ -86,26 +87,18 @@ printf("LOW\n");
 };
 
 
-while(error!=1){
-printf("\nStartar loop..\n");
-if((fd = open("/sys/bus/w1/devices/28-0417039fa6ff/w1_slave",O_RDONLY)) < 0)
-
-        {
-
-
-/*****
-
-Do not exit the program, paus for a while and try later in a loop!!
-
-*****/
 
 
 
-            printf("open error\n");
+while(error!=1){  // main loop
 
-            return 1;
 
-        }
+if((fd = open("/sys/bus/w1/devices/28-0417039fa6ff/w1_slave",O_RDONLY)) < 0){
+	//something
+	}else{
+
+	// something
+	}
 
 
 if(read(fd,buf,sizeof(buf)) < 0)
@@ -124,7 +117,7 @@ if(read(fd,buf,sizeof(buf)) < 0)
 
 
         }
-
+close(fd);
         // Returns the first index of 't'.
 
 temp = strchr(buf,'t');
@@ -147,7 +140,7 @@ intvalue = atoi(temp)/1000;
 
 
 // Do we turn heat on?
-if (value < 40.0){		//If its 40 or hotter, do not turn it on.
+if (value < wanted_value){		//If its 40 or hotter, do not turn it on.
 	// Turn heat on,
 	printf("Setting heater on for %d seconds,,\n", heat_time_open);
 	digitalWrite(heater, LOW);
@@ -157,7 +150,7 @@ if (value < 40.0){		//If its 40 or hotter, do not turn it on.
 	}
 
 //turn heat off?
-if (value < 40.0){
+if (value < wanted_value){
 	printf("Skipping turning it off, to cold. Going full power! Temp: %3.3f °C\n", value);
 	}else{
 	printf("Setting heater off for %d seconds..\n", heat_time_closed);
