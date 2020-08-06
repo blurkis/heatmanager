@@ -57,7 +57,29 @@ void INThandler(int);
 
 
 
-int main (void){
+int main (int argc, char *argv[]){
+
+int opt;
+
+while((opt = getopt(argc, argv, “:help”)) != -1)
+
+    {
+
+        switch(opt)
+
+        {
+
+            case ‘help’:
+
+                printf(“help... %c\n”, opt);
+                break;
+
+        }
+
+    }
+
+
+
 
 signal(SIGINT, INThandler);
 
