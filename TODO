@@ -1,3 +1,6 @@
-* Have it some how notice me when something goes wrong.  Either temperatures drop, and do not rise, or program exits.
 * The heater on the Uponor has built in overheat-protection. If its to hot, then it turns off, and the power needs to be turned off for a while for it to restart. 
   Catch the situation where heat is not rising over a period of heating-moments and turn the power off for X minutes for it to restart.
+
+* Fully support arguments,
+
+* Make it possible to change desired temp from tcp/ip port.  (To make a mobile app for it later,)
