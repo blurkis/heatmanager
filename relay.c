@@ -5,26 +5,13 @@
 
 /****
 
-Kolla upp vilka lägen som gäller för termostaten öppen/stängd samt för värmaren på/av.
-
-* När reläet är på (1) så går ingen ström till termostaten och den är nere.
 
 
-gpio write 4 0   För att sätta igång värmaren.
-gpio write 4 1   För att stänga av den. 
+gpio write 4 0   To start heater.
+gpio write 4 1   To shut it off. 
 
 */
 
-/* Saker att fixa.
-
-
-
-	1.   Stäng av den under natten? Typ, 2-6?
-	2.   Reglera om det blir för varmt. Typ, stäng av värmen helt eller delvis?
-	3.   Reglera värmaren med algoritm. Dvs, blir det för varmt, så  öka vilotiden tills önskad värme nåtts?
-
-
-*/
 
 
 #include <unistd.h>
