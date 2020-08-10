@@ -1,0 +1,15 @@
+Server listens on port XXX:
+
+Client -> 
+
+1[wintermode=0,Summermode=1]
+2[wanted temp]
+3[send actual temp]
+
+
+
+ex.
+Client -> 10   == wintermode
+Client -> 11   == summermode
+Client -> 222  == set wanted temp to 22 deg.
+Client -> 3    == send actual temperature.
