@@ -1,8 +1,3 @@
-* When it open the one-wire sensor for data, it should not close the application upon open-error or read-error, but instead in a loop try to re-open it after a small paus.
-For example:
-
-try open, 
-if fail -> paus 5 secs.
-Try open, -> paus 5 secs,
-	if fail (close heater,) and retry open for ever with 5 secs paus.
-x
+* Have it some how notice me when something goes wrong.  Either temperatures drop, and do not rise, or program exits.
+* The heater on the Uponor has built in overheat-protection. If its to hot, then it turns off, and the power needs to be turned off for a while for it to restart. 
+  Catch the situation where heat is not rising over a period of heating-moments and turn the power off for X minutes for it to restart.

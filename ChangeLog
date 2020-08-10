@@ -1,3 +1,7 @@
+2020-08-19:
+	* Added support for ncurses
+	* Added support for sockets and basic support for changing wanted temperature over sockets.
+
 2020-07-29:
 	* Initial release to github.
 	* When it failed to open the one-wire data it used to quit the program. Now it sleeps for some time and atleast tries one more time.

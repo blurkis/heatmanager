@@ -1,1 +1,1 @@
-gcc -Wall -o relay relay.c -lwiringPi
+gcc -Wall -o relay relay.c -lwiringPi -lncurses -lpthread
