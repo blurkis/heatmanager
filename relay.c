@@ -74,7 +74,7 @@ static void *code_for_network(void *arg){
 
 int socket_desc , client_sock , c , read_size;
 struct sockaddr_in server , client;
-	char client_message[2000];
+char client_message[2000];
 char ok_response[200]="Command read and accepted. Will do!";
 char fail_response[200]="Command read but not accepted.";
 char slask2[3000];

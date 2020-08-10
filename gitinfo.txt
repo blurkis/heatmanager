@@ -1,0 +1,3 @@
+git add "ändrade filer"
+
+först commit, sen git push.
